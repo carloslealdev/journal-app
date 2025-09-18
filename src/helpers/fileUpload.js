@@ -1,5 +1,6 @@
 export const fileUpload = async (file) => {
-  if (!file) throw new Error("No hay ningún archivo para subir");
+  // if (!file) throw new Error("No hay ningún archivo para subir");
+  if (!file) return null;
 
   const cloudUrl = "https://api.cloudinary.com/v1_1/react-curso-front/upload";
 
