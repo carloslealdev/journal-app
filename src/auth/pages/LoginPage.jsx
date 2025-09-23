@@ -40,6 +40,7 @@ export const LoginPage = () => {
   return (
     <AuthLayout title="Login">
       <form
+        aria-label="submit-form"
         className="animate__animated animate__fadeIn animate__slow"
         // component="form"
         onSubmit={onSubmit}
@@ -76,6 +77,9 @@ export const LoginPage = () => {
           required
           onChange={onInputChange}
           value={password}
+          inputProps={{
+            "data-testid": "Password",
+          }}
         />{" "}
         <Box display="flex" flexDirection="column" mt={2}>
           <Box display={!!errorMessage ? "" : "none"}>
@@ -103,6 +107,7 @@ export const LoginPage = () => {
               disabled={isAuthenticating}
               variant="contained"
               fullWidth
+              aria-label="google-btn"
               onClick={onGoogleSignIn}
             >
               {" "}
